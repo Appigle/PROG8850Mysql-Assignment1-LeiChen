@@ -6,7 +6,7 @@
         "--security-opt",
         "seccomp=unconfined"
     ],
-    "postCreateCommand": "pip3 install --user ansible",
+    "postCreateCommand": "pip3 install --user ansible packaging",
     "customizations": {
         "vscode": {
             "extensions": [
@@ -22,4 +22,4 @@
         }
     }
     // ...
-  }
+}

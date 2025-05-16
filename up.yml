@@ -6,11 +6,17 @@
       community.docker.docker_compose_v2:
         project_src: .
         files:
-        - mysql-adminer.yml
+          - mysql-adminer.yml
         state: present
+
     - name: Install mysql-client
       ansible.builtin.package:
         name: mysql-client
         update_cache: yes
         state: present
+      become: yes
+      
+    - name: Install Python requirements
+      ansible.builtin.pip:
+        requirements: requirements.txt
       become: yes
